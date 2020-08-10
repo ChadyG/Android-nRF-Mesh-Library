@@ -64,6 +64,74 @@ public class ApplicationMessageOpCodes {
      */
     public static final int GENERIC_LEVEL_STATUS = 0x8208;
 
+
+
+
+    /**
+     * Opcode for the "Generic Admin Properties get message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTIES_GET = 0x822C;
+
+    /**
+     * Opcode for the "Generic Admin Properties status" message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTIES_STATUS = 0x47;
+
+    /**
+     * Opcode for the "Generic Admin Property Get" message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTY_GET = 0x822D;
+
+    /**
+     * Opcode for the "Generic Admin Property Set" message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTY_SET = 0x48;
+
+    /**
+     * Opcode for the "Generic Admin Property Set Unacknowledged" message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTY_SET_UNACKNOWLEDGED = 0x49;
+
+    /**
+     * Opcode for the "Generic Admin Property Status" message.
+     */
+    public static final int GENERIC_ADMIN_PROPERTY_STATUS = 0x4A;
+
+
+    /**
+     * Opcode for the "Generic User Properties get message.
+     */
+    public static final int GENERIC_USER_PROPERTIES_GET = 0x822E;
+
+    /**
+     * Opcode for the "Generic User Properties status" message.
+     */
+    public static final int GENERIC_USER_PROPERTIES_STATUS = 0x4B;
+
+    /**
+     * Opcode for the "Generic User Property Get" message.
+     */
+    public static final int GENERIC_USER_PROPERTY_GET = 0x822F;
+
+    /**
+     * Opcode for the "Generic User Property Set" message.
+     */
+    public static final int GENERIC_USER_PROPERTY_SET = 0x4C;
+
+    /**
+     * Opcode for the "Generic User Property Set Unacknowledged" message.
+     */
+    public static final int GENERIC_USER_PROPERTY_SET_UNACKNOWLEDGED = 0x4D;
+
+    /**
+     * Opcode for the "Generic User Property Status" message.
+     */
+    public static final int GENERIC_USER_PROPERTY_STATUS = 0x4E;
+
+
+
+
+
     /**
      * Opcode for the "Light Lightness Get" message
      */
