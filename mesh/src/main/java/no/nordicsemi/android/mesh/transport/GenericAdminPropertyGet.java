@@ -1,6 +1,11 @@
 package no.nordicsemi.android.mesh.transport;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 import no.nordicsemi.android.mesh.ApplicationKey;
 import no.nordicsemi.android.mesh.opcodes.ApplicationMessageOpCodes;
@@ -39,5 +44,10 @@ public class GenericAdminPropertyGet extends GenericMessage {
     @Override
     void assembleMessageParameters() {
         mAid = SecureUtils.calculateK4(mAppKey.getKey());
+        final ByteBuffer paramsBuffer;
+        Log.v(TAG, "Property: " + mPropertyID);
+        paramsBuffer = ByteBuffer.allocate(GENERIC_ADMIN_PROPERTY_GET_PARAMS_LENGTH).order(ByteOrder.LITTLE_ENDIAN);
+        paramsBuffer.putShort(mPropertyID);
+        mParameters = paramsBuffer.array();
     }
 }

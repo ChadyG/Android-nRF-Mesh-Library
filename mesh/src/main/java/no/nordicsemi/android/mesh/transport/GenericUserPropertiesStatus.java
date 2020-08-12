@@ -54,10 +54,11 @@ public class GenericUserPropertiesStatus extends GenericStatusMessage implements
         Log.v(TAG, "Received generic user properties status from: " + MeshAddress.formatAddress(mMessage.getSrc(), true));
         final ByteBuffer buffer = ByteBuffer.wrap(mParameters).order(ByteOrder.LITTLE_ENDIAN);
         buffer.position(0);
-        mPropertyIDs = new short[buffer.limit()/2];
-        if (buffer.limit() > 2) {
+        int count = buffer.limit()/2;
+        mPropertyIDs = new short[count];
+        for (int i = 0; i < count; i++) {
             short propID = buffer.getShort();
-            mPropertyIDs[buffer.position()/2] = propID;
+            mPropertyIDs[i] = propID;
             Log.v(TAG, "Property ID: " + propID);
         }
     }

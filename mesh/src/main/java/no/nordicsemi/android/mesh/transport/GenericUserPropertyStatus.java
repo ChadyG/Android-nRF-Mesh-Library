@@ -56,9 +56,10 @@ public class GenericUserPropertyStatus extends GenericStatusMessage implements P
         buffer.position(0);
         mPropertyID = buffer.getShort();
         mUserAccess = buffer.get();
-        mPropertyValue = new byte[buffer.limit() - 3];
-        if (buffer.limit() > 2) {
-            mPropertyValue[buffer.position()-3] = buffer.get();
+        int count = buffer.limit() - 3;
+        mPropertyValue = new byte[count];
+        for (int i = 0; i < count; i++) {
+            mPropertyValue[i] = buffer.get();
         }
     }
 
