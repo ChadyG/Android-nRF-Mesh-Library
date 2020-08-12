@@ -110,6 +110,22 @@ class DefaultNoOperationMessageState extends MeshMessageState {
                     }
                     mInternalTransportCallbacks.updateMeshNetwork(status);
                     mMeshStatusCallbacks.onMeshMessageReceived(message.getSrc(), status);
+                } else if (message.getOpCode() == ApplicationMessageOpCodes.GENERIC_ADMIN_PROPERTIES_STATUS) {
+                    final GenericAdminPropertiesStatus genericAdminPropertiesStatus = new GenericAdminPropertiesStatus(message);
+                    mInternalTransportCallbacks.updateMeshNetwork(genericAdminPropertiesStatus);
+                    mMeshStatusCallbacks.onMeshMessageReceived(message.getSrc(), genericAdminPropertiesStatus);
+                } else if (message.getOpCode() == ApplicationMessageOpCodes.GENERIC_ADMIN_PROPERTY_STATUS) {
+                    final GenericAdminPropertyStatus genericAdminPropertyStatus = new GenericAdminPropertyStatus(message);
+                    mInternalTransportCallbacks.updateMeshNetwork(genericAdminPropertyStatus);
+                    mMeshStatusCallbacks.onMeshMessageReceived(message.getSrc(), genericAdminPropertyStatus);
+                } else if (message.getOpCode() == ApplicationMessageOpCodes.GENERIC_USER_PROPERTIES_STATUS) {
+                    final GenericUserPropertiesStatus genericUserPropertiesStatus = new GenericUserPropertiesStatus(message);
+                    mInternalTransportCallbacks.updateMeshNetwork(genericUserPropertiesStatus);
+                    mMeshStatusCallbacks.onMeshMessageReceived(message.getSrc(), genericUserPropertiesStatus);
+                } else if (message.getOpCode() == ApplicationMessageOpCodes.GENERIC_USER_PROPERTY_STATUS) {
+                    final GenericUserPropertyStatus genericUserPropertyStatus = new GenericUserPropertyStatus(message);
+                    mInternalTransportCallbacks.updateMeshNetwork(genericUserPropertyStatus);
+                    mMeshStatusCallbacks.onMeshMessageReceived(message.getSrc(), genericUserPropertyStatus);
                 } else {
                     handleUnknownPdu(message);
                 }
