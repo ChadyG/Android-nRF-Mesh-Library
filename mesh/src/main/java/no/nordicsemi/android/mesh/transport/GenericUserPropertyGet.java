@@ -12,17 +12,22 @@ import no.nordicsemi.android.mesh.utils.SecureUtils;
 @SuppressWarnings("unused")
 public class GenericUserPropertyGet extends GenericMessage {
 
-    private static final String TAG = GenericOnOffGet.class.getSimpleName();
+    private static final String TAG = GenericUserPropertyGet.class.getSimpleName();
     private static final int OP_CODE = ApplicationMessageOpCodes.GENERIC_USER_PROPERTY_GET;
+    private static final int GENERIC_USER_PROPERTY_GET_PARAMS_LENGTH = 2;
+
+    private short mPropertyID;
 
     /**
-     * Constructs GenericUserPropertyGet message.
+     * Constructs GenericAdminPropertyGet message.
      *
      * @param appKey application key for this message
      * @throws IllegalArgumentException if any illegal arguments are passed
      */
-    public GenericUserPropertyGet(@NonNull final ApplicationKey appKey) throws IllegalArgumentException {
+    public GenericUserPropertyGet(@NonNull final ApplicationKey appKey,
+                                   final short propertyId) throws IllegalArgumentException {
         super(appKey);
+        mPropertyID = propertyId;
         assembleMessageParameters();
     }
 

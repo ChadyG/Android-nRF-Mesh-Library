@@ -12,8 +12,11 @@ import no.nordicsemi.android.mesh.utils.SecureUtils;
 @SuppressWarnings("unused")
 public class GenericAdminPropertyGet extends GenericMessage {
 
-    private static final String TAG = GenericOnOffGet.class.getSimpleName();
+    private static final String TAG = GenericAdminPropertyGet.class.getSimpleName();
     private static final int OP_CODE = ApplicationMessageOpCodes.GENERIC_ADMIN_PROPERTY_GET;
+    private static final int GENERIC_ADMIN_PROPERTY_GET_PARAMS_LENGTH = 2;
+
+    private short mPropertyID;
 
     /**
      * Constructs GenericAdminPropertyGet message.
@@ -21,8 +24,10 @@ public class GenericAdminPropertyGet extends GenericMessage {
      * @param appKey application key for this message
      * @throws IllegalArgumentException if any illegal arguments are passed
      */
-    public GenericAdminPropertyGet(@NonNull final ApplicationKey appKey) throws IllegalArgumentException {
+    public GenericAdminPropertyGet(@NonNull final ApplicationKey appKey,
+                                   final short propertyId) throws IllegalArgumentException {
         super(appKey);
+        mPropertyID = propertyId;
         assembleMessageParameters();
     }
 

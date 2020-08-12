@@ -17,7 +17,7 @@ import no.nordicsemi.android.mesh.utils.SecureUtils;
 @SuppressWarnings("unused")
 public class GenericAdminPropertySetUnacknowledged extends GenericMessage {
 
-    private static final String TAG = GenericOnOffSet.class.getSimpleName();
+    private static final String TAG = GenericAdminPropertySetUnacknowledged.class.getSimpleName();
     private static final int OP_CODE = ApplicationMessageOpCodes.GENERIC_ADMIN_PROPERTY_SET_UNACKNOWLEDGED;
     private static final int GENERIC_ADMIN_PROPERTY_SET_PARAMS_LENGTH = 3;
 

@@ -19,7 +19,7 @@ import no.nordicsemi.android.mesh.utils.SecureUtils;
  */
 @SuppressWarnings("unused")
 public class GenericUserPropertiesStatus extends GenericStatusMessage implements Parcelable {
-    private static final String TAG = GenericOnOffStatus.class.getSimpleName();
+    private static final String TAG = GenericUserPropertiesStatus.class.getSimpleName();
     private static final int OP_CODE = ApplicationMessageOpCodes.GENERIC_USER_PROPERTIES_STATUS;
 
     private short[] mPropertyIDs;

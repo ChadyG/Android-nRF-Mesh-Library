@@ -18,7 +18,7 @@ import no.nordicsemi.android.mesh.utils.SecureUtils;
 @SuppressWarnings("unused")
 public class GenericAdminPropertySet extends GenericMessage {
 
-    private static final String TAG = GenericOnOffSet.class.getSimpleName();
+    private static final String TAG = GenericAdminPropertySet.class.getSimpleName();
     private static final int OP_CODE = ApplicationMessageOpCodes.GENERIC_ADMIN_PROPERTY_SET;
     private static final int GENERIC_ADMIN_PROPERTY_SET_PARAMS_LENGTH = 3;
 
